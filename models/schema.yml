@@ -1,11 +1,11 @@
 version: 2
 sources:
   - name: raw
-    database: valid-expanse-475012-v5.gz_raw_data
+    database: valid-expanse-475012-v5
     schema: gz_raw_data
     loader: bigquery
-    freshness: 
-      warn_after: {count: 90, period: day}
+    freshness:
+      warn_after: { count: 90, period: day }
     tables:
       - name: sales
         identifier: raw_gz_sales
@@ -32,7 +32,7 @@ sources:
           - name: products_id
             description: Primary key
             tests:
-              - unique 
+              - unique
               - not_null
           - name: purchase_price
             description: the purchase price of the product
@@ -44,7 +44,7 @@ sources:
             description: Primary key
             tests:
               - unique
-              - not_null 
+              - not_null
           - name: shipping_fee
             description: the price the customer pays for shipping
           - name: log_cost
